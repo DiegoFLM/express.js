@@ -10,17 +10,22 @@ const port = 3000;
 //express.json is a native middleware
 app.use(express.json());
 
-const whitelist = ['http://localhost:8080', 'https://platzi-store.co'];
-const options = {
-  origin: (origin, callback) => {
-    const exists = whitelist.some((domain) => domain === origin); // -------
-    if (exists) {                // if (whitelist.contains(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  }
-};
+
+// include localhost in whitelist
+// const whitelist = ['http://localhost:3000', 'http://localhost:8080', 'http://127.0.0.1:8080', 'http://127.0.0.1:5500',
+// '127.0.0.1:5500', 'http://localhost:80'];
+
+// const options = {
+//   origin: (origin, callback) => {             //
+//     if (whitelist.includes(origin)) {
+//       callback(null, true);
+//     } else {
+//       console.error('Error origin port: ', origin);
+//       callback(new Error('Not allowed by CORS'));
+//     }
+//   }
+// };
+// app.use(cors(options));
 app.use(cors());
 
 app.get('/', (req, res) => {
