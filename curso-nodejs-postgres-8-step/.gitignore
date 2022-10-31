@@ -1,5 +1,6 @@
-# Created by https://www.toptal.com/developers/gitignore/api/node,linux
-# Edit at https://www.toptal.com/developers/gitignore?templates=node,linux
+
+# Created by https://www.toptal.com/developers/gitignore/api/node,windows,linux,macos
+# Edit at https://www.toptal.com/developers/gitignore?templates=node,windows,linux,macos
 
 ### Linux ###
 *~
@@ -15,6 +16,35 @@
 
 # .nfs files are created when an open file is removed but is still being accessed
 .nfs*
+
+### macOS ###
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
 
 ### Node ###
 # Logs
@@ -73,9 +103,6 @@ web_modules/
 # Optional eslint cache
 .eslintcache
 
-# Optional stylelint cache
-.stylelintcache
-
 # Microbundle cache
 .rpt2_cache/
 .rts2_cache_cjs/
@@ -91,12 +118,10 @@ web_modules/
 # Yarn Integrity file
 .yarn-integrity
 
-# dotenv environment variable files
+# dotenv environment variables file
 .env
-.env.development.local
-.env.test.local
-.env.production.local
-.env.local
+.env.test
+.env.production
 
 # parcel-bundler cache (https://parceljs.org/)
 .cache
@@ -118,12 +143,6 @@ dist
 
 # vuepress build output
 .vuepress/dist
-
-# vuepress v2.x temp and cache directory
-.temp
-
-# Docusaurus cache and generated files
-.docusaurus
 
 # Serverless directories
 .serverless/
@@ -147,18 +166,32 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-### Node Patch ###
-# Serverless Webpack directories
-.webpack/
+### Windows ###
+# Windows thumbnail cache files
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
 
-# Optional stylelint cache
+# Dump file
+*.stackdump
 
-# SvelteKit build / generate output
-.svelte-kit
+# Folder config file
+[Dd]esktop.ini
 
-# End of https://www.toptal.com/developers/gitignore/api/node,linux
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
 
+# Windows Installer files
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
 
-# Postgres
+# Windows shortcuts
+*.lnk
+
 postgres_data
-docker-compose.yml
+
+# End of https://www.toptal.com/developers/gitignore/api/node,windows,linux,macos

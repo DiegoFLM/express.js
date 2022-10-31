@@ -1,20 +1,16 @@
 const boom = require('@hapi/boom');
 
-const { models } = require('./../libs/sequelize');
+class OrderService {
 
-const getConnection = require('../libs/postgres');
-
-class UserService {
-  constructor() {}
-
+  constructor(){
+  }
   async create(data) {
     return data;
   }
 
   async find() {
-    const rta = await models.User.findAll();
-    return rta;
-  } 
+    return [];
+  }
 
   async findOne(id) {
     return { id };
@@ -30,6 +26,7 @@ class UserService {
   async delete(id) {
     return { id };
   }
+
 }
 
-module.exports = UserService;
+module.exports = OrderService;
