@@ -9,6 +9,4 @@ const URI=`postgres://${USER}:${PASSWORD}@${config.dbHost}:${config.dbPort}/${co
 const sequelize=new Sequelize(URI,{dialect:'postgres',logging:false,});
 setupModels(sequelize);
 
-sequelize.sync();
 module.exports=sequelize;
-

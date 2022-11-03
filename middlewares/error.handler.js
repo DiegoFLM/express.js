@@ -1,4 +1,5 @@
-const { stack } = require("../routes/products.router");
+const{ValidationError} = require('sequelize');
+const boom = require('@hapi/boom');
 
 function logErrors(err, req, res, next) {
   console.log('logErrors');
@@ -19,10 +20,13 @@ function boomErrorHandler(err, req, res, next) {
     const { output: { statusCode, payload } } = err;
     res.status(statusCode).json(payload);
   }
-
   next(err);
 }
 
+function ormErrorHandler(err,req,res,next){
+  if(err instanceof ValidationError){ //sequelize
+    res.status(409).json({statusCode:409,message:err.name,errors:err.errors});
+  }
+next(err);}
 
-
-module.exports = { logErrors, errorHandler, boomErrorHandler };
+module.exports = { logErrors, errorHandler, boomErrorHandler, ormErrorHandler };

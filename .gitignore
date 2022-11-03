@@ -162,3 +162,4 @@ dist
 # Postgres
 postgres_data
 docker-compose.yml
+mysql_data
